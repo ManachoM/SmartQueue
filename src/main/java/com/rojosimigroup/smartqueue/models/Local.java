@@ -9,6 +9,7 @@ public class Local {
     private String nombreLocal;
     private String direccion;
     private int cantidadPersonasAdmitidas;
+    private Fila filaAsoc;
 
     public Local(String nombreLocal, String direccion, int cantidadPersonasAdmitidas) {
         this.nombreLocal = nombreLocal;
