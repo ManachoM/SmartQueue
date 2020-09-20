@@ -11,7 +11,7 @@ public class Local {
     private String nombreLocal;
     private String direccion;
     private int cantidadPersonasAdmitidas;
-    private ArrayList<Cliente> genteLocal;
+    private int genteLocal;
 
     private Fila filaAsoc;
 
@@ -20,9 +20,9 @@ public class Local {
         this.direccion = direccion;
         this.cantidadPersonasAdmitidas = cantidadPersonasAdmitidas;
         this.filaAsoc = new Fila(50);
-        this.genteLocal = new ArrayList<Cliente>();
+        this.genteLocal = 0;
     }
-
+    //Getters
     public String getNombreLocal() {
         return nombreLocal;
     }
@@ -39,10 +39,11 @@ public class Local {
         return filaAsoc;
     }
 
-    public ArrayList<Cliente> getGenteLocal() {
+    public int getGenteLocal() {
         return genteLocal;
     }
 
+    //Setters
     public void setNombreLocal(String newNombre){
         this.nombreLocal = newNombre;
     }
@@ -53,5 +54,14 @@ public class Local {
 
     public void setCantidadPersonasAdmitidas(int newCantidad){
         this.cantidadPersonasAdmitidas = newCantidad;
+    }
+
+    //Métodos
+    public void aumentarGenteLocal() {
+        this.genteLocal += 1;
+    }
+
+    public void decrementarGenteLocal() {
+        this.genteLocal += 1;
     }
 }

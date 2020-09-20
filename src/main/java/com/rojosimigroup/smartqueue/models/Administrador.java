@@ -56,11 +56,31 @@ public class Administrador extends Usuario{
     private void cambiarNombreLocal(String nuevoNombre){
         this.getLocal().setNombreLocal(nuevoNombre);
     }
+    /*
+    * Método que cambia la ubicación del local
+    * */
+    private void cambiarUbicacionLocal(String ubicacion){
+        this.getLocal().setDireccion(ubicacion);
+    }
 
+    /*
+    * Método que cambia los admitidos del local
+    * */
+    private void cambiarAdmitidos(int admitidos){
+        this.getLocal().setCantidadPersonasAdmitidas(admitidos);
+    }
+
+    /*
+    * Método que pasa el primer cliente en la fila a la lista de clientes en el local.
+    * También, borra un cliente en el local y borra
+    * */
     public void pasarCliente(){
         Cliente clienteEnAtencion = this.getLocal().getFilaAsoc().getListaClientes().get(0);
         this.getLocal().getFilaAsoc().getListaClientes().remove(0);
-        this.getLocal().getGenteLocal().add(0,clienteEnAtencion);
+        this.getLocal().aumentarGenteLocal();
+    }
+    public void borrarClienteLocal(){
+        this.getLocal().decrementarGenteLocal();
     }
 
     public void pasarAPrimero(Cliente cliente){
