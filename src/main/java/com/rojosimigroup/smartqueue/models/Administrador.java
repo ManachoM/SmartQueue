@@ -79,10 +79,15 @@ public class Administrador extends Usuario{
         this.getLocal().getFilaAsoc().getListaClientes().remove(0);
         this.getLocal().aumentarGenteLocal();
     }
+    /*
+    * Se decrementa en uno la cantidad de clientes que están en el local.
+    * */
     public void borrarClienteLocal(){
         this.getLocal().decrementarGenteLocal();
     }
-
+    /*
+    * Pasa a primero a un cliente solo si tiene activa la casilla de discapacidad.
+    * */
     public void pasarAPrimero(Cliente cliente){
         if(cliente.isDiscapacidad()) {
             int indexClienteDis = this.getLocal().getFilaAsoc().getListaClientes().indexOf(cliente);
@@ -93,10 +98,4 @@ public class Administrador extends Usuario{
             System.out.println("No esta en la fila");
         }
     }
-
-
-
-    /*
-    *
-    * */
 }

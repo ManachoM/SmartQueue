@@ -3,6 +3,7 @@ package com.rojosimigroup.smartqueue.models;
 import com.mongodb.internal.connection.Time;
 
 public class Reserva {
+    //Atributos construcción
     private Time horaDePedido;
     private Local local;
 

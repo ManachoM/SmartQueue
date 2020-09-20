@@ -6,17 +6,19 @@ import java.util.ArrayList;
 //@Document("cliente");
 
 public class Cliente extends Usuario{
-
+    //Atributos construcción
     private int edad;
     private boolean discapacidad;
     private ArrayList<Reserva> reserva = new ArrayList<Reserva>();
 
+    //Constructor
     public Cliente(String nombre, String apellido, String rut, String telefono, int edad, boolean discapacidad) {
         super(nombre, apellido, rut, telefono);
         this.edad = edad;
         this.discapacidad = discapacidad;
     }
 
+    //Getters
     public int getEdad() {
         return edad;
     }
@@ -29,6 +31,7 @@ public class Cliente extends Usuario{
         return reserva;
     }
 
+    //Setters
     public void setEdad(int edad) {
         this.edad = edad;
     }
@@ -41,6 +44,7 @@ public class Cliente extends Usuario{
         this.discapacidad = discapacidad;
     }
 
+    //Métodos
     public void reservarFila(int indexReserva){
         this.getReserva().get(indexReserva).getLocal().getFilaAsoc().agregarCliente(this);
     }

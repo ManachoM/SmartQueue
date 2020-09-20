@@ -64,18 +64,26 @@ public class Fila {
     }
 
     //Métodos
+    /*
+    * Agrega un cliente específico a la fila.
+    * */
     public void agregarCliente(Cliente cliente){
         this.listaClientes.add(cliente);
     }
 
-    //
-    public int calcularTiempoEstimado(int ){
-        int resultado = this.cantidadDePersonas * this.tiempoEstimado;
+    /*
+    * Calcula el tiempo estimado en base al número de cliente en la fila.
+    * */
+    public int calcularTiempoEstimado(int indexCliente){
+        int resultado = (indexCliente+1) * this.tiempoEstimado;
         return resultado; //en minutos
     }
-
+    /*
+     * Calcula el tiempo estimado en base al cliente específico en la fila.
+     * */
     public int calcularTiempoEstimado(Cliente cliente){
-        int resultado = ;
+        int resultado = (this.listaClientes.indexOf(cliente) + 1) * this.tiempoEstimado;
+        return resultado; //en minutos
     }
 
 }

@@ -8,13 +8,16 @@ import java.util.ArrayList;
 public class Local {
     @Id
     private String id;
+    //Atributos construcción
     private String nombreLocal;
     private String direccion;
     private int cantidadPersonasAdmitidas;
     private int genteLocal;
 
+    //Atributo que se crea en el mismo constructor.
     private Fila filaAsoc;
 
+    //Constructor
     public Local(String nombreLocal, String direccion, int cantidadPersonasAdmitidas) {
         this.nombreLocal = nombreLocal;
         this.direccion = direccion;

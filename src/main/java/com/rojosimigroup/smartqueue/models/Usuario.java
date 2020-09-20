@@ -8,11 +8,13 @@ public class Usuario {
 
     @Id
     protected String id;
+    //Atributos constructores
     protected String nombre;
     protected String apellido;
     protected String rut;
     protected String telefono;
 
+    //Constructor
     public Usuario(String nombre, String apellido, String rut, String telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -20,7 +22,7 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-
+    //Getters
     public String getNombre() {
         return nombre;
     }
@@ -39,7 +41,7 @@ public class Usuario {
 
 
 
-
+    //Setters
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
