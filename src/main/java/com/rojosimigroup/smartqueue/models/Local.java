@@ -2,6 +2,8 @@ package com.rojosimigroup.smartqueue.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+
 @Document("local")
 public class Local {
     @Id
@@ -9,6 +11,7 @@ public class Local {
     private String nombreLocal;
     private String direccion;
     private int cantidadPersonasAdmitidas;
+    private ArrayList<Cliente> genteLocal;
 
     private Fila filaAsoc;
 
@@ -17,6 +20,7 @@ public class Local {
         this.direccion = direccion;
         this.cantidadPersonasAdmitidas = cantidadPersonasAdmitidas;
         this.filaAsoc = new Fila(50);
+        this.genteLocal = new ArrayList<Cliente>();
     }
 
     public String getNombreLocal() {
@@ -33,6 +37,10 @@ public class Local {
 
     public Fila getFilaAsoc() {
         return filaAsoc;
+    }
+
+    public ArrayList<Cliente> getGenteLocal() {
+        return genteLocal;
     }
 
     public void setNombreLocal(String newNombre){

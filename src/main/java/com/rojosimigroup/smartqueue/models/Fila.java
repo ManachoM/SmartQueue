@@ -35,12 +35,8 @@ public class Fila {
         return listaClientes;
     }
 
-    //Setters
-    public void setCantidadDePersonas(int cantidadDePersonas) {
-        this.cantidadDePersonas = cantidadDePersonas;
-    }
-    public void setCantidadDePersonasMax(int cantidadDePersonasMax) {
-        this.cantidadDePersonasMax = cantidadDePersonasMax;
+    public boolean isActivacion() {
+        return activacion;
     }
 
     public void setActivacion() {
@@ -52,8 +48,13 @@ public class Fila {
         }
     }
 
-    //Método
-    public void agregarCliente(Cliente cliente){
-        this.listaClientes.add(cliente);
+    //Setters
+    public void setCantidadDePersonas(int cantidadDePersonas) {
+        this.cantidadDePersonas = cantidadDePersonas;
     }
+    public void setCantidadDePersonasMax(int cantidadDePersonasMax) {
+        this.cantidadDePersonasMax = cantidadDePersonasMax;
+    }
+
+
 }
