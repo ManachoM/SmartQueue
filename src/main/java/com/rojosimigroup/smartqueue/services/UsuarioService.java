@@ -39,7 +39,7 @@ public class UsuarioService {
         currentUser.setNombre(usuario.getNombre());
         currentUser.setApellido(usuario.getApellido());
         currentUser.setTelefono(usuario.getTelefono());
-        currentUser.setDiscapacidad(usuario.isDiscapacidad());
+        //currentUser.setDiscapacidad(usuario.isDiscapacidad());
         usuarioRepo.save(currentUser);
         return currentUser;
     }

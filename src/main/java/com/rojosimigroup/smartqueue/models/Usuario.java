@@ -7,21 +7,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Usuario {
 
     @Id
-    private String id;
-    private String nombre;
-    private String apellido;
-    private String rut;
-    private String telefono;
-    private boolean discapacidad;
+    protected String id;
+    protected String nombre;
+    protected String apellido;
+    protected String rut;
+    protected String telefono;
 
-
+    /**
     public Usuario(String nombre, String apellido, String rut, String telefono, boolean discapacidad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.rut = rut;
         this.telefono = telefono;
-        this.discapacidad = discapacidad;
-    }
+    }*/
 
 
     public String getNombre() {
@@ -40,9 +38,6 @@ public class Usuario {
         return telefono;
     }
 
-    public boolean isDiscapacidad() {
-        return discapacidad;
-    }
 
 
 
@@ -62,7 +57,4 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-    public void setDiscapacidad(boolean discapacidad) {
-        this.discapacidad = discapacidad;
-    }
 }

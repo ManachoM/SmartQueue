@@ -2,7 +2,7 @@ package com.rojosimigroup.smartqueue.models;
 import org.springframework.data.annotation.Id;
 
 public class Fila {
-    @id
+    @Id
     private int id;
 
     private int cantidadDePersonas = 0;

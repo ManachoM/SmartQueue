@@ -1,18 +1,20 @@
 package com.rojosimigroup.smartqueue.models;
 
+import com.mongodb.internal.connection.Time;
+
 public class Reserva {
-    private time horaDePedido;
+    private Time horaDePedido;
 
     //Constructor
-    public Reserva(time horaDePedido) {
+    public Reserva(Time horaDePedido) {
         this.horaDePedido = horaDePedido;
     }
     //Getters
-    public time getHoraDePedido() {
+    public Time getHoraDePedido() {
         return horaDePedido;
     }
     //Setters
-    public void setHoraDePedido(time horaDePedido) {
+    public void setHoraDePedido(Time horaDePedido) {
         this.horaDePedido = horaDePedido;
     }
 }
