@@ -4,10 +4,12 @@ import com.mongodb.internal.connection.Time;
 
 public class Reserva {
     private Time horaDePedido;
+    private Local local;
 
     //Constructor
-    public Reserva(Time horaDePedido) {
+    public Reserva(Time horaDePedido,Local local) {
         this.horaDePedido = horaDePedido;
+        this.local = local;
     }
     //Getters
     public Time getHoraDePedido() {

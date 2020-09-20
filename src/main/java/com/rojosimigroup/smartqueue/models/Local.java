@@ -9,12 +9,14 @@ public class Local {
     private String nombreLocal;
     private String direccion;
     private int cantidadPersonasAdmitidas;
+
     private Fila filaAsoc;
 
     public Local(String nombreLocal, String direccion, int cantidadPersonasAdmitidas) {
         this.nombreLocal = nombreLocal;
         this.direccion = direccion;
         this.cantidadPersonasAdmitidas = cantidadPersonasAdmitidas;
+        this.filaAsoc = new Fila(50);
     }
 
     public String getNombreLocal() {

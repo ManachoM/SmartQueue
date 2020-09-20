@@ -1,6 +1,7 @@
 package com.rojosimigroup.smartqueue.models;
 
-//import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Document;
+import java.util.ArrayList;
 
 //@Document("cliente");
 
@@ -8,19 +9,12 @@ public class Cliente extends Usuario{
 
     private int edad;
     private boolean discapacidad;
-    private Reserva reserva;
+    private ArrayList<Reserva> reserva = new ArrayList<Reserva>();
 
-
-
-    public Cliente(String nombre, String apellido, String rut, String telefono, int edad, boolean discapacidad, Reserva reserva) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.rut = rut;
-        this.telefono = telefono;
+    public Cliente(String nombre, String apellido, String rut, String telefono, int edad, boolean discapacidad) {
+        super(nombre, apellido, rut, telefono);
         this.edad = edad;
         this.discapacidad = discapacidad;
-        this.reserva = reserva;
-
     }
 
     public int getEdad() {
@@ -31,7 +25,7 @@ public class Cliente extends Usuario{
         return discapacidad;
     }
 
-    public Reserva getReserva() {
+    public ArrayList<Reserva> getReserva() {
         return reserva;
     }
 
@@ -39,7 +33,7 @@ public class Cliente extends Usuario{
         this.edad = edad;
     }
 
-    public void setReserva(Reserva reserva) {
+    public void setReserva(ArrayList<Reserva> reserva) {
         this.reserva = reserva;
     }
 

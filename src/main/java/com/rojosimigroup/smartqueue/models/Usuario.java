@@ -13,13 +13,12 @@ public class Usuario {
     protected String rut;
     protected String telefono;
 
-    /**
-    public Usuario(String nombre, String apellido, String rut, String telefono, boolean discapacidad) {
+    public Usuario(String nombre, String apellido, String rut, String telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.rut = rut;
         this.telefono = telefono;
-    }*/
+    }
 
 
     public String getNombre() {
