@@ -10,6 +10,6 @@ import java.util.List;
 public interface UsuarioRepo extends MongoRepository<Usuario, String>{
 
     Usuario findUserByRut(String rut);
-    List<Usuario> findByDiscapacidad(Boolean disc);
+    Usuario findUsuarioByTelefono(String telefono);
 
 }
