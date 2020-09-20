@@ -56,5 +56,8 @@ public class Fila {
         this.cantidadDePersonasMax = cantidadDePersonasMax;
     }
 
-
+    //Métodos
+    public void agregarCliente(Cliente cliente){
+        this.listaClientes.add(cliente);
+    }
 }
