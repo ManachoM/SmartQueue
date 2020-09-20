@@ -1,6 +1,8 @@
 package com.rojosimigroup.smartqueue.models;
 
+import com.mongodb.internal.connection.Time;
 import org.springframework.data.annotation.Id;
+
 
 import java.util.ArrayList;
 
@@ -14,6 +16,7 @@ public class Fila {
     private int cantidadDePersonas = 0;
     private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
     private boolean activacion = false;
+    private int tiempoEstimado;
 
 
     //Constructor
@@ -56,8 +59,23 @@ public class Fila {
         this.cantidadDePersonasMax = cantidadDePersonasMax;
     }
 
+    public void setTiempoEstimado(int tiempoEstimado) {
+        this.tiempoEstimado = tiempoEstimado;
+    }
+
     //Métodos
     public void agregarCliente(Cliente cliente){
         this.listaClientes.add(cliente);
     }
+
+    //
+    public int calcularTiempoEstimado(int ){
+        int resultado = this.cantidadDePersonas * this.tiempoEstimado;
+        return resultado; //en minutos
+    }
+
+    public int calcularTiempoEstimado(Cliente cliente){
+        int resultado = ;
+    }
+
 }

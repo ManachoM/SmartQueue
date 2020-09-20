@@ -17,10 +17,6 @@ public class Cliente extends Usuario{
         this.discapacidad = discapacidad;
     }
 
-    public void consultarLugar(){
-
-    }
-
     public int getEdad() {
         return edad;
     }
@@ -48,4 +44,9 @@ public class Cliente extends Usuario{
     public void reservarFila(int indexReserva){
         this.getReserva().get(indexReserva).getLocal().getFilaAsoc().agregarCliente(this);
     }
+
+    public int consultarLugar(int indexReserva){
+        return this.getReserva().get(indexReserva).getLocal().getFilaAsoc().getListaClientes().indexOf(this);
+    }
+
 }
