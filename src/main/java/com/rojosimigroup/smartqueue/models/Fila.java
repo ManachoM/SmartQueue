@@ -31,12 +31,12 @@ public class Fila {
         return activacion;
     }
 
-    //Setters
-    public void setCantidadDePersonas(int cantidadDePersonas) {
-        this.cantidadDePersonas = cantidadDePersonas;
+    public ArrayList<Cliente> getListaClientes() {
+        return listaClientes;
     }
-    public void setCantidadDePersonasMax(int cantidadDePersonasMax) {
-        this.cantidadDePersonasMax = cantidadDePersonasMax;
+
+    public boolean isActivacion() {
+        return activacion;
     }
 
     public void setActivacion() {
@@ -47,4 +47,14 @@ public class Fila {
             this.activacion = true;
         }
     }
+
+    //Setters
+    public void setCantidadDePersonas(int cantidadDePersonas) {
+        this.cantidadDePersonas = cantidadDePersonas;
+    }
+    public void setCantidadDePersonasMax(int cantidadDePersonasMax) {
+        this.cantidadDePersonasMax = cantidadDePersonasMax;
+    }
+
+
 }

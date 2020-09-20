@@ -1,5 +1,7 @@
 package com.rojosimigroup.smartqueue.models;
 
+import java.util.ArrayList;
+
 public class Administrador extends Usuario{
     //Atributos construccion
     private String correo;
@@ -10,6 +12,7 @@ public class Administrador extends Usuario{
         this.correo = correo;
         this.local = local;
     }
+
     //Getters
     public String getCorreo() {
         return correo;
@@ -53,6 +56,25 @@ public class Administrador extends Usuario{
     private void cambiarNombreLocal(String nuevoNombre){
         this.getLocal().setNombreLocal(nuevoNombre);
     }
+
+    public void pasarCliente(){
+        Cliente clienteEnAtencion = this.getLocal().getFilaAsoc().getListaClientes().get(0);
+        this.getLocal().getFilaAsoc().getListaClientes().remove(0);
+        this.getLocal().getGenteLocal().add(0,clienteEnAtencion);
+    }
+
+    public void pasarAPrimero(Cliente cliente){
+        if(cliente.isDiscapacidad()) {
+            int indexClienteDis = this.getLocal().getFilaAsoc().getListaClientes().indexOf(cliente);
+            this.getLocal().getFilaAsoc().getListaClientes().remove(indexClienteDis);
+            this.getLocal().getFilaAsoc().getListaClientes().add(0, cliente);
+        }
+        else{
+            System.out.println("No esta en la fila");
+        }
+    }
+
+
 
     /*
     *
