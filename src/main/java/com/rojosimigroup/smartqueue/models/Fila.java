@@ -31,6 +31,10 @@ public class Fila {
         return activacion;
     }
 
+    public ArrayList<Cliente> getListaClientes() {
+        return listaClientes;
+    }
+
     //Setters
     public void setCantidadDePersonas(int cantidadDePersonas) {
         this.cantidadDePersonas = cantidadDePersonas;
@@ -46,5 +50,10 @@ public class Fila {
         else{
             this.activacion = true;
         }
+    }
+
+    //Método
+    public void agregarCliente(Cliente cliente){
+        this.listaClientes.add(cliente);
     }
 }

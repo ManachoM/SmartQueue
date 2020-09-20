@@ -15,6 +15,11 @@ public class Reserva {
     public Time getHoraDePedido() {
         return horaDePedido;
     }
+
+    public Local getLocal() {
+        return local;
+    }
+
     //Setters
     public void setHoraDePedido(Time horaDePedido) {
         this.horaDePedido = horaDePedido;

@@ -17,10 +17,6 @@ public class Cliente extends Usuario{
         this.discapacidad = discapacidad;
     }
 
-    public void reservaFila(){
-
-    }
-
     public void consultarLugar(){
 
     }
@@ -47,5 +43,9 @@ public class Cliente extends Usuario{
 
     public void setDiscapacidad(boolean discapacidad) {
         this.discapacidad = discapacidad;
+    }
+
+    public void reservarFila(int indexReserva){
+        this.getReserva().get(indexReserva).getLocal().getFilaAsoc().agregarCliente(this);
     }
 }
