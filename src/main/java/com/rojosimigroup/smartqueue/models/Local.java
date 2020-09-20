@@ -31,6 +31,10 @@ public class Local {
         return cantidadPersonasAdmitidas;
     }
 
+    public Fila getFilaAsoc() {
+        return filaAsoc;
+    }
+
     public void setNombreLocal(String newNombre){
         this.nombreLocal = newNombre;
     }

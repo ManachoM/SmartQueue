@@ -39,5 +39,12 @@ public class Fila {
         this.cantidadDePersonasMax = cantidadDePersonasMax;
     }
 
-
+    public void setActivacion() {
+        if(this.activacion){
+            this.activacion = false;
+        }
+        else{
+            this.activacion = true;
+        }
+    }
 }
