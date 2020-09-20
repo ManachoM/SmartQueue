@@ -17,6 +17,14 @@ public class Cliente extends Usuario{
         this.discapacidad = discapacidad;
     }
 
+    public void reservaFila(){
+
+    }
+
+    public void consultarLugar(){
+
+    }
+
     public int getEdad() {
         return edad;
     }
