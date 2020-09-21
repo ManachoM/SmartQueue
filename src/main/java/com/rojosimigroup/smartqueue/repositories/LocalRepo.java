@@ -9,5 +9,6 @@ public interface LocalRepo extends MongoRepository<Local, String> {
 
     Local findByNombreLocal(String nombreLocal);
     Local findByDireccion(String direccion);
+    
 
 }

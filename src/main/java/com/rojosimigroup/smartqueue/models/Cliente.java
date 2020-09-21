@@ -19,6 +19,8 @@ public class Cliente extends Usuario{
     }
 
     //Getters
+    public String getId() {return this.id;}
+
     public int getEdad() {
         return edad;
     }

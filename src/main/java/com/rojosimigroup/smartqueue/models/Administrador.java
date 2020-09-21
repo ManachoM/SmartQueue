@@ -1,16 +1,23 @@
 package com.rojosimigroup.smartqueue.models;
 
+import org.springframework.data.annotation.Id;
+
 import java.util.ArrayList;
 
 public class Administrador extends Usuario{
+
+    @Id
+    private String id;
     //Atributos construccion
     private String correo;
     private Local local;
+    private String password;
 
-    public Administrador(String nombre, String apellido, String rut, String telefono, boolean discapacidad, String correo, Local local) {
+    public Administrador(String nombre, String apellido, String rut, String telefono, boolean discapacidad, String correo, Local local, String password) {
         super(nombre, apellido, rut, telefono);
         this.correo = correo;
         this.local = local;
+        this.password = password;
     }
 
     //Getters
@@ -97,5 +104,13 @@ public class Administrador extends Usuario{
         else{
             System.out.println("No esta en la fila");
         }
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
