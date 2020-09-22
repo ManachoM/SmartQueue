@@ -17,8 +17,10 @@ import java.util.Optional;
 public class LocalService {
 
     @Autowired
-    LocalRepo localRepo;
-    ClienteRepo clienteRepo;
+    private LocalRepo localRepo;
+
+    @Autowired
+    private ClienteRepo clienteRepo;
 
     @RequestMapping(value = "/{localId}", method = RequestMethod.POST)
     public void anadirAFila(@RequestBody Cliente cliente, @PathVariable(value = "localId") String id){
@@ -32,10 +34,10 @@ public class LocalService {
             System.out.println("No se pudo agregar a fila :c");
         }
 
-        Optional<Cliente> oCliente = clienteRepo.findById(cliente.getId());
-        if(oCliente.isEmpty()){
-            clienteRepo.save(cliente);
-        }
+        //Optional<Cliente> oCliente = clienteRepo.findById(cliente.getId());
+        //if(oCliente.isEmpty()){
+        //    clienteRepo.save(cliente);
+        //}
 
     }
 
