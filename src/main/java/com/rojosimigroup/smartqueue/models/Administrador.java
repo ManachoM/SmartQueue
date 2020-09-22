@@ -2,12 +2,10 @@ package com.rojosimigroup.smartqueue.models;
 
 import org.springframework.data.annotation.Id;
 
-import java.util.ArrayList;
-
 public class Administrador extends Usuario{
 
-    @Id
-    private String id;
+
+    private String idAdmin;
     //Atributos construccion
     private String correo;
     private Local local;
@@ -112,5 +110,13 @@ public class Administrador extends Usuario{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getIdAdmin() {
+        return idAdmin;
+    }
+
+    public void setIdAdmin(String idAdmin) {
+        this.idAdmin = idAdmin;
     }
 }

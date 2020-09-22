@@ -1,11 +1,14 @@
 package com.rojosimigroup.smartqueue.models;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.ArrayList;
 
 //@Document("cliente");
 
 public class Cliente extends Usuario{
+
+    private String idCliente;
     //Atributos construcción
     private int edad;
     private boolean discapacidad;
@@ -19,7 +22,6 @@ public class Cliente extends Usuario{
     }
 
     //Getters
-    public String getId() {return this.id;}
 
     public int getEdad() {
         return edad;
@@ -55,4 +57,11 @@ public class Cliente extends Usuario{
         return this.getReserva().get(indexReserva).getLocal().getFilaAsoc().getListaClientes().indexOf(this);
     }
 
+    public String getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(String idCliente) {
+        this.idCliente = idCliente;
+    }
 }

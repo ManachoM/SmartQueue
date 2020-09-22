@@ -7,6 +7,7 @@ import com.rojosimigroup.smartqueue.models.Local;
 import com.rojosimigroup.smartqueue.repositories.ClienteRepo;
 import com.rojosimigroup.smartqueue.repositories.LocalRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;

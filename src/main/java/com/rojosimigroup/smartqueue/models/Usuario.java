@@ -7,12 +7,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Usuario {
 
     @Id
-    protected String id;
+    private String id;
     //Atributos constructores
-    protected String nombre;
-    protected String apellido;
-    protected String rut;
-    protected String telefono;
+    private String nombre;
+    private String apellido;
+    private String rut;
+    private String telefono;
 
     //Constructor
     public Usuario(String nombre, String apellido, String rut, String telefono) {
@@ -58,4 +58,11 @@ public class Usuario {
         this.telefono = telefono;
     }
 
+    public String getIdAdmin() {
+        return id;
+    }
+
+    public void setIdAdmin(String idAdmin) {
+        this.id = idAdmin;
+    }
 }
