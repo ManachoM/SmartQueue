@@ -1,6 +1,8 @@
-<template>
-  <div id="home">
+<template class = "background-color-page">
+  <div id="home" class = "background-color-page">
     <NavBar/>
+    <p>holi</p>
+
   </div>
 </template>
 
@@ -12,3 +14,9 @@ export default {
   components: {NavBar}
 };
 </script>
+
+<style>
+  .background-color-page{
+    background-color: #d9d9d9;
+  }
+</style>
