@@ -49,17 +49,17 @@ public class Cliente extends Usuario{
     }
 
     //Métodos
-    public void reservarFila(int indexReserva){
-        this.getReserva().get(indexReserva).getLocal().getFilaAsoc().agregarCliente(this);
-    }
+    //public void reservarFila(int indexReserva){
+   //     this.getReserva().get(indexReserva).getLocal().getFilaAsoc().agregarCliente(this);
+  //  }
 
     public void ingresarReserva(Reserva reserva){
         this.reserva.add(reserva);
     }
 
-    public int consultarLugar(int indexReserva){
-        return this.getReserva().get(indexReserva).getLocal().getFilaAsoc().getListaClientes().indexOf(this);
-    }
+  //  public int consultarLugar(int indexReserva){
+   //     return this.getReserva().get(indexReserva).getLocal().getFilaAsoc().getListaClientes().indexOf(this);
+   // }
 
     public String getId() {
         return id;

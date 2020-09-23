@@ -5,20 +5,20 @@ import com.mongodb.internal.connection.Time;
 public class Reserva {
     //Atributos construcción
     private long horaDePedido;
-    private Local local;
+    private String localId;
 
     //Constructor
-    public Reserva(long horaDePedido, Local local) {
+    public Reserva(long horaDePedido, String local) {
         this.horaDePedido = horaDePedido;
-        this.local = local;
+        this.localId = local;
     }
     //Getters
     public long getHoraDePedido() {
         return horaDePedido;
     }
 
-    public Local getLocal() {
-        return local;
+    public String getLocal() {
+        return localId;
     }
 
 
@@ -27,5 +27,5 @@ public class Reserva {
         this.horaDePedido = horaDePedido;
     }
 
-    public void setLocal(Local newLocal) {this.local = newLocal;}
+    public void setLocal(String newLocal) {this.localId = newLocal;}
 }

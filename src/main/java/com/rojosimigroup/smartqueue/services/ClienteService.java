@@ -26,7 +26,7 @@ public class ClienteService {
     @RequestMapping(value = "/{rut}", method = RequestMethod.GET)
     public int encontrarLugarFila(@PathVariable(value = "rut") String rut){
     Cliente cliente = clienteRepo.findClienteByRut(rut);
-    String idLocal = cliente.getReserva().get(0).getLocal().getId();
+    String idLocal = cliente.getReserva().get(0).getLocal();
     Optional<Local> oLocal = localRepo.findById(idLocal);
     if(oLocal.isPresent()){
         Local local = oLocal.get();
@@ -42,5 +42,11 @@ public class ClienteService {
     public List<Cliente> getAll(){
         return clienteRepo.findAll();
 
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public void create(@RequestBody Cliente cliente){
+        clienteRepo.save(cliente);
+        System.out.println("Se creo cliente");
     }
 }

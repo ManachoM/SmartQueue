@@ -33,12 +33,9 @@ public class LocalService {
         if(oLocal.isPresent()) {
             Local local = oLocal.get();
             Fila fila = local.getFilaAsoc();
-            fila.agregarCliente(cliente);
-            local.setFilaAsoc(fila);
-            localRepo.save(local);
 
           //  Optional<Cliente> oCliente = Optional.ofNullable(clienteRepo.findClienteByRut(cliente.getRut()));
-            Reserva newReserva = new Reserva(System.currentTimeMillis(), oLocal.get());
+            Reserva newReserva = new Reserva(System.currentTimeMillis(), oLocal.get().getId());
             //if(oCliente.isEmpty()){
             cliente.ingresarReserva(newReserva);
             clienteRepo.save(cliente);
