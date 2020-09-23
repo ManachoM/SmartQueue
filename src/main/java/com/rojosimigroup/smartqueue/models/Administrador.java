@@ -1,7 +1,9 @@
 package com.rojosimigroup.smartqueue.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document("admin")
 public class Administrador extends Usuario{
 
 
@@ -47,7 +49,6 @@ public class Administrador extends Usuario{
         //Caso fila activada
         if(getActivacion()) {
             System.out.println("La fila ya está activada");
-            return;
         }
         //Caso fila desactivada: Se activa.
         else{

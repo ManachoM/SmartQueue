@@ -53,6 +53,10 @@ public class Cliente extends Usuario{
         this.getReserva().get(indexReserva).getLocal().getFilaAsoc().agregarCliente(this);
     }
 
+    public void ingresarReserva(Reserva reserva){
+        this.reserva.add(reserva);
+    }
+
     public int consultarLugar(int indexReserva){
         return this.getReserva().get(indexReserva).getLocal().getFilaAsoc().getListaClientes().indexOf(this);
     }
