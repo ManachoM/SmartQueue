@@ -9,6 +9,7 @@ import com.rojosimigroup.smartqueue.repositories.LocalRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -35,5 +36,11 @@ public class ClienteService {
         System.out.println("No se encontró local :c");
         return -1;
     }
+    }
+
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    public List<Cliente> getAll(){
+        return clienteRepo.findAll();
+
     }
 }
