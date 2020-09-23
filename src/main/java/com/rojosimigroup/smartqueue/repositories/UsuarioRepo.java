@@ -8,7 +8,11 @@ import java.util.List;
 
 @Repository
 public interface UsuarioRepo extends MongoRepository<Usuario, String>{
-
+    /*
+    * SELECT *
+    * FROM users u
+    * WHERE u.rut = rut
+    * */
     Usuario findUserByRut(String rut);
     Usuario findUsuarioByTelefono(String telefono);
 
