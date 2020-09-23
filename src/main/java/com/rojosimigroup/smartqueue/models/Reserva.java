@@ -8,9 +8,9 @@ public class Reserva {
     private String localId;
 
     //Constructor
-    public Reserva(long horaDePedido, String local) {
+    public Reserva(long horaDePedido, String localId) {
         this.horaDePedido = horaDePedido;
-        this.localId = local;
+        this.localId = localId;
     }
     //Getters
     public long getHoraDePedido() {

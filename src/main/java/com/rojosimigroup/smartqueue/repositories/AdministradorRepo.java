@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AdministradorRepo extends MongoRepository<Administrador, String> {
     Administrador findAdministradorByCorreo(String correo);
+    Administrador findAdministradorByRut(String rut);
 
 }

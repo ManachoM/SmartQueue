@@ -1,7 +1,6 @@
 package com.rojosimigroup.smartqueue.services;
 
 
-import com.mongodb.internal.connection.Time;
 import com.rojosimigroup.smartqueue.models.*;
 import com.rojosimigroup.smartqueue.repositories.AdministradorRepo;
 import com.rojosimigroup.smartqueue.repositories.ClienteRepo;
@@ -9,7 +8,6 @@ import com.rojosimigroup.smartqueue.repositories.LocalRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,6 +39,7 @@ public class LocalService {
             clienteRepo.save(cliente);
            // }else {
            //     Cliente currentCliente = oCliente.get();
+
            //     currentCliente.ingresarReserva(newReserva);
            //     clienteRepo.save(currentCliente);
            //     }
@@ -59,18 +58,20 @@ public class LocalService {
     }
 
     @RequestMapping(value = "/regLocal", method = RequestMethod.POST)
-    public void crearLocal(@RequestBody Local newLocal){
+    public Local crearLocal(@RequestBody Local newLocal){
         localRepo.save(newLocal);
         System.out.println("Se registró local");
+        return newLocal;
     }
 
     @RequestMapping(value = "/regAdmin", method = RequestMethod.POST)
     public void crearAdmin(@RequestBody Administrador newAdministrador){
         administradorRepo.save(newAdministrador);
+        System.out.println("Se creo admin");
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public void login(@RequestBody Administrador administrador){
+    public Optional<Local> login(@RequestBody Administrador administrador){
         String mail = administrador.getCorreo();
         String password = administrador.getPassword();
         String id = administrador.getIdAdmin();
@@ -78,8 +79,11 @@ public class LocalService {
         if(oAdmin.isPresent()){
             if(oAdmin.get().getCorreo() == mail && oAdmin.get().getPassword() == password){
                 System.out.println("funcionó el loggeo c:");
+                return localRepo.findById(administradorRepo.findAdministradorByCorreo(oAdmin.get().getCorreo()).getLocal());
             }else System.out.println("no funcionó el loggeo :c");
         }else System.out.println("No existe este admin :s");
+
+        return null;
     }
 
 }
