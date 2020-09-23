@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Usuario {
 
     @Id
-    private String id;
+    protected String id;
     //Atributos constructores
     private String nombre;
     private String apellido;

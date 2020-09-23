@@ -59,13 +59,15 @@ public class Local {
         this.cantidadPersonasAdmitidas = newCantidad;
     }
 
+    public void setFilaAsoc(Fila newFila){ this.filaAsoc = newFila; }
+
     //Métodos
     public void aumentarGenteLocal() {
         this.genteLocal += 1;
     }
 
     public void decrementarGenteLocal() {
-        this.genteLocal += 1;
+        this.genteLocal += -1;
     }
 
     public String getId() {

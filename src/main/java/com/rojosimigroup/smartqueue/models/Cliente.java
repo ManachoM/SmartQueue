@@ -4,11 +4,11 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.ArrayList;
 
-//@Document("cliente");
+
 
 public class Cliente extends Usuario{
 
-    private String idCliente;
+    //private String idCliente;
     //Atributos construcción
     private int edad;
     private boolean discapacidad;
@@ -49,19 +49,23 @@ public class Cliente extends Usuario{
     }
 
     //Métodos
-    public void reservarFila(int indexReserva){
-        this.getReserva().get(indexReserva).getLocal().getFilaAsoc().agregarCliente(this);
+    //public void reservarFila(int indexReserva){
+   //     this.getReserva().get(indexReserva).getLocal().getFilaAsoc().agregarCliente(this);
+  //  }
+
+    public void ingresarReserva(Reserva reserva){
+        this.reserva.add(reserva);
     }
 
-    public int consultarLugar(int indexReserva){
-        return this.getReserva().get(indexReserva).getLocal().getFilaAsoc().getListaClientes().indexOf(this);
-    }
+  //  public int consultarLugar(int indexReserva){
+   //     return this.getReserva().get(indexReserva).getLocal().getFilaAsoc().getListaClientes().indexOf(this);
+   // }
 
-    public String getIdCliente() {
-        return idCliente;
+    public String getId() {
+        return id;
     }
 
     public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
+        this.id = idCliente;
     }
 }
