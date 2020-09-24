@@ -11,10 +11,16 @@
           </v-form>
         </v-card-text>
         <v-card-actions id="actionSearch">
-          <v-btn color="success" id="btnBuscar" >Buscar mi lugar en la fila</v-btn>
+          <v-btn color="success" id="btnBuscar" v-on:click="lugar">Buscar mi lugar en la fila</v-btn>
         </v-card-actions>
       </v-card>
     </v-container>
+    <v-divider></v-divider>
+    <v-card id="escondibleCard" v-if="tiempo != 0">
+      <v-card-text>
+        <p>Tu lugar en la fila es: {{tiempo}}</p>
+      </v-card-text>
+    </v-card>
   </div>
 </template>
 
@@ -27,27 +33,32 @@ export default {
     return {
       tiempo: 0
     }
-  }
-};
+  }, methods:{
 
-function getInputRut(){
-  return document.getElementById("rutInput");
-}
+     inputRut : function (event){
+       if(event){return document.getElementById("rutInput");}
 
-function getLugar(){
-  var rut = getInputRut();
+},
+//var obj = document.getElementById("btnBuscar")
+//o/bj.onclick = getLugar();
+ lugar: function() {
+
+  var rut = document.getElementById("rutInput").value;
   axios
-    .get("http://localhost:8081/lugarFila/"+rut)
-    .then(result => {
-      this.tiempo = result.data
-        })
-    .catch(e => {
-      console.log("Error: " + e);
-        });
+      .get("http://localhost:8080/lugarFila/" + rut)
+      .then(result => {
+        alert("se entró al post");
+        this.tiempo = result.data
+      })
+      .catch(e => {
+        console.log("Error: " + e);
+      });
+  //document.getElementById("escondibleCard").style.visibility = "visible";
 }
 
-document.getElementById("btnBuscar").addEventListener("click", getLugar());
-
+//document.getElementById("btnBuscar").addEventListener("click", getLugar());
+}
+};
 </script>
 
 <style>
@@ -55,6 +66,7 @@ document.getElementById("btnBuscar").addEventListener("click", getLugar());
   align-items: center;
   justify-content: center;
 }
+
 
 #search{
   display: flex;
