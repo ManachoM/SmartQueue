@@ -56,8 +56,8 @@ export default {
   axios
       .get("http://localhost:8080/lugarFila/" + rut)
       .then(result => {
-        alert("se entró al post");
-        this.tiempo = result.data
+        alert("Estás en el lugar " + result.data + " de la fila.");
+        //this.tiempo = result.data
       })
       .catch(e => {
         console.log("Error: " + e);

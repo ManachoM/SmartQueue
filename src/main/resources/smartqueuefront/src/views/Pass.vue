@@ -1,7 +1,13 @@
 <template >
   <div id="pass" class = "background-color-page">
     <v-container>
+    <v-card v-if="admin!=null">
+      <v-card-title>
+        <h3>¡Bienvenido de vuelta, {{admin.nombre}} {{admin.apellido}}!</h3>
+      </v-card-title>
+    </v-card>
 
+      <br>
 
     <v-simple-table id="tablaClientes" width="500">
 
@@ -58,6 +64,7 @@ export default {
   name: "Pass",
   data() {
     return {
+      admin: {},
       local: {}
     }
   },
@@ -70,6 +77,14 @@ export default {
       .catch(e => {
         console.log("Error: " + e);
       });
+    axios
+        .get("http://localhost:8080/admin/getAdmin/333333-4")
+        .then(result => {
+          this.admin = result.data;
+        })
+        .catch(e => {
+          console.log("Error: " + e);
+        });
   },methods:{
     hacerPasar (){
       axios
