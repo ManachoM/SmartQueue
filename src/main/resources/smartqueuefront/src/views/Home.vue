@@ -81,12 +81,13 @@
             ></v-checkbox>
             <v-col cols = "12" md = "4">
               <v-btn
-                  :disabled="!valid"
+                  dark
                   color="#284b63"
                   class="mr-4"
                   @click="validate"
+
               >
-                Validate
+                Ingresar a la fila
               </v-btn>
             </v-col>
           </v-col>
