@@ -24,5 +24,6 @@ export default {
 }
 #app{
   height:100vh;
+  font-family: "Roboto Light", sans-serif;
 }
 </style>

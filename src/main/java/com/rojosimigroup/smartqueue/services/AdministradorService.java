@@ -22,6 +22,12 @@ public class AdministradorService {
     @Autowired
     ClienteRepo clienteRepo;
 
+    @RequestMapping(value = "/getAdmin/{rut}", method = RequestMethod.GET)
+    public Administrador getAdmin(@PathVariable(value = "rut") String rut){
+        return administradorRepo.findAdministradorByRut(rut);
+    }
+
+
     @RequestMapping(value = "/{rut}", method = RequestMethod.GET)
     public Optional<Local> getLocal(@PathVariable(value = "rut") String rut){
         return localRepo.findById(administradorRepo.findAdministradorByRut(rut).getLocal());

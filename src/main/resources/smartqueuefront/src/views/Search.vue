@@ -1,5 +1,5 @@
 <template class = "background-color-page">
-  <div id="search">
+  <div id="search" class = "background-color-page">
     <v-col>
     <v-container>
       <v-row>
@@ -20,11 +20,14 @@
     </v-container>
       <br>
       <v-row>
-    <v-card id="escondibleCard" v-if="tiempo != 0">
+    <v-card id="escondibleCard" v-if="tiempo > 0">
       <v-card-text>
         <p>Tu lugar en la fila es: {{tiempo}}</p>
       </v-card-text>
     </v-card>
+        <v-card v-else-if="tiempo<0">
+          <p>Este rut no está registrado </p>
+        </v-card>
       </v-row>
     </v-col>
   </div>
@@ -73,12 +76,16 @@ export default {
   justify-content: center;
 }
 
+.background-color-page{
+  background-color: #d9d9d9;
+}
 
 #search{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 0px;
+  font-family: "Roboto Light", sans-serif;
 }
 
 h1, btn {

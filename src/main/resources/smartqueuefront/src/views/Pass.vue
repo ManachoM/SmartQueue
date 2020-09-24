@@ -1,5 +1,25 @@
-<template class = "background-color-page">
-  <div id="pass">
+<template >
+  <div id="pass" class = "background-color-page">
+    <v-container>
+
+
+    <v-simple-table id="tablaClientes" width="500">
+
+        <thead>
+        <tr>
+          <th class="text-left">Nombre</th>
+          <th class="text-left">Rut</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="cliente in local.filaAsoc.listaClientes" :key="cliente._id">
+          <td>{{ cliente.nombre }} {{cliente.apellido}}</td>
+          <td>{{ cliente.rut }}</td>
+        </tr>
+        </tbody>
+
+    </v-simple-table>
+    </v-container>
     <v-row >
       <v-col cols = "4">
 
@@ -20,7 +40,7 @@
       </v-col>
       <v-col cols = "4" md = "4">
         <div >
-          <v-btn class = "alinear-centro" depressed x-large color="#284b63" dark>¡Hacer pasar cliente!</v-btn>
+          <v-btn class = "alinear-centro" depressed x-large color="#284b63" dark v-on:click="hacerPasar()">¡Hacer pasar cliente!</v-btn>
         </div>
       </v-col>
       <v-col cols = "4">
@@ -38,23 +58,41 @@ export default {
   name: "Pass",
   data() {
     return {
-      clientes: []
+      local: {}
     }
   },
   created(){
     axios
-      .get("http://localhost:8081/lugarFila/getAll")
+      .get("http://localhost:8080/admin/333333-4")
       .then(result => {
-          this.clientes = result.data;
+          this.local = result.data;
           })
       .catch(e => {
         console.log("Error: " + e);
       });
+  },methods:{
+    hacerPasar (){
+      axios
+        .delete("http://localhost:8080/admin/333333-4")
+        .then(result => {
+          if(result != null){
+            this.local = result.data;
+          }
+        })
+        .catch(function (error) {
+          console.log("Error: "+ error);
+        });
+    }
   }
 };
 </script>
 
 <style>
+#tablaClientes{
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+}
 .background-color-page{
   background-color: #d9d9d9;
   height: 100%;

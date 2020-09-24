@@ -97,6 +97,7 @@
                   class="mr-4"
                   @click="validate"
                   v-on:click="ingresarFila()"
+                  :disabled="valid"
 
 
               >
@@ -116,9 +117,6 @@ import axios from "axios";
 export default {
   name: "Home",
   data: () => ({
-    items: [
-      'ola','qtalllllll'
-    ],
     valid: true,
     firstname: '',
     nameRules: [
@@ -164,7 +162,7 @@ export default {
       var edad = document.getElementById("edad").value;
       var discapacidad = document.getElementById("discapacidad").value;
       axios
-          .post("http://localhost:8080/home/almacen", {
+          .post("http://localhost:8080/home/boliche", {
             nombre: nombre,
             apellido: apellido,
             rut: rut,
@@ -178,6 +176,7 @@ export default {
           .catch(function (error) {
             console.log(error);
           });
+
       document.getElementById("nombre").value = "";
       document.getElementById("apellido").value = "";
       document.getElementById("rut").value = "";
