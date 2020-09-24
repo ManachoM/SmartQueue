@@ -1,0 +1,12 @@
+.formulario{
+    background-color: #EEE;
+}
+.fila-1{
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+.contenido{
+    width: 25%;
+    margin-right: 10%;
+}
