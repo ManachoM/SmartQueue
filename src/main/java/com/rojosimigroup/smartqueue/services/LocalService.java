@@ -5,11 +5,11 @@ import com.rojosimigroup.smartqueue.models.*;
 import com.rojosimigroup.smartqueue.repositories.AdministradorRepo;
 import com.rojosimigroup.smartqueue.repositories.ClienteRepo;
 import com.rojosimigroup.smartqueue.repositories.LocalRepo;
+import com.sun.el.stream.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -27,13 +27,13 @@ public class LocalService {
 
     @RequestMapping(value = "/{localName}", method = RequestMethod.POST)
     public void anadirAFila(@RequestBody Cliente cliente, @PathVariable(value = "localName") String nombre){
-        Optional<Local> oLocal = Optional.ofNullable(localRepo.findByNombreLocal(nombre));
+        java.util.Optional<Local> oLocal = java.util.Optional.ofNullable(localRepo.findByNombreLocal(nombre));
         if(oLocal.isPresent()) {
-            Local local = oLocal.get();
+            Local local = (Local) oLocal.get();
             Fila fila = local.getFilaAsoc();
 
           //  Optional<Cliente> oCliente = Optional.ofNullable(clienteRepo.findClienteByRut(cliente.getRut()));
-            Reserva newReserva = new Reserva(System.currentTimeMillis(), oLocal.get().getId());
+            Reserva newReserva = new Reserva(System.currentTimeMillis(), ((Local) oLocal.get()).getId());
             //if(oCliente.isEmpty()){
             cliente.ingresarReserva(newReserva);
             clienteRepo.save(cliente);
@@ -71,11 +71,11 @@ public class LocalService {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public Optional<Local> login(@RequestBody Administrador administrador){
+    public java.util.Optional<Local> login(@RequestBody Administrador administrador){
         String mail = administrador.getCorreo();
         String password = administrador.getPassword();
         String id = administrador.getIdAdmin();
-        Optional<Administrador> oAdmin = administradorRepo.findById(id);
+        java.util.Optional<Administrador> oAdmin = administradorRepo.findById(id);
         if(oAdmin.isPresent()){
             if(oAdmin.get().getCorreo() == mail && oAdmin.get().getPassword() == password){
                 System.out.println("funcionó el loggeo c:");
