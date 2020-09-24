@@ -36,7 +36,7 @@ public class CodigoQr {
             FileOutputStream fos = new FileOutputStream(file);
             fos.write(out.toByteArray());
             fos.close();
-            System.out.println("exitoo");
+            System.out.println("Se ha convertido el link con éxito.");
         }
 
         catch (Exception e){
