@@ -1,4 +1,5 @@
 <template>
+
   <nav>
     <v-toolbar flat app color = "#284b63">
       <v-toolbar-title>
@@ -6,23 +7,26 @@
         <span class = "white tamaño-titulo">Queue</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn href = "/" color = "#284b63">
+      <v-btn to = "/" color = "#284b63">
         <span class = "white">
           Ingresar a la fila
         </span>
         <v-icon>fas fa-tachometer-alt</v-icon>
       </v-btn>
-      <v-btn href = "/" color = "#284b63">
+      <v-btn to = "/search" color = "#284b63">
         <span class = "white">
-          Registrar mi negocio
+          Buscarme en la fila
         </span>
       </v-btn>
-      <v-btn href = "/" color = "#284b63">
-        <span class = "white">
-          Iniciar Sesión
+      <v-btn to = "/pass" color = "#284b63">
+        <span v-if = "true" class = "white">
+          Pasar una persona
+        </span>
+        <span v-else class = "white">
+
         </span>
       </v-btn>
-      <v-btn href = "/" color = "#284b63">
+      <v-btn to = "/" color = "#284b63">
         <span class = "white">
           FAQ
         </span>
