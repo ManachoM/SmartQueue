@@ -22,7 +22,7 @@
 export default {
   name: "Search",
   data() {
-
+    "tiempo": 0
   }
 };
 </script>

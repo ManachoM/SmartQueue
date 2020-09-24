@@ -23,8 +23,8 @@ public class AdministradorService {
     ClienteRepo clienteRepo;
 
     @RequestMapping(value = "/{rut}", method = RequestMethod.GET)
-    public Administrador getAdmin(@PathVariable(value = "rut") String rut){
-        return administradorRepo.findAdministradorByRut(rut);
+    public Optional<Local> getLocal(@PathVariable(value = "rut") String rut){
+        return localRepo.findById(administradorRepo.findAdministradorByRut(rut).getLocal());
     }
 
     @RequestMapping(value = "/{rut}", method = RequestMethod.DELETE)
