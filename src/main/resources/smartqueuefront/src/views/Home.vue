@@ -3,6 +3,7 @@
   <div id="home" class = "background-color-page">
     <v-form v-model="valid">
       <v-container>
+
         <v-row>
           <v-col
               cols="12"

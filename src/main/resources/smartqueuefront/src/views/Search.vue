@@ -1,6 +1,8 @@
 <template class = "background-color-page">
   <div id="search">
+    <v-col>
     <v-container>
+      <v-row>
       <v-card width="100%" class="mx-auto mt-5">
         <v-card-title class="d-flex justify-space-between" id="titleSearch">
           <h1 class="display-1 text-xs-center"> Busca tu lugar en la fila </h1>
@@ -14,13 +16,17 @@
           <v-btn color="success" id="btnBuscar" v-on:click="lugar">Buscar mi lugar en la fila</v-btn>
         </v-card-actions>
       </v-card>
+      </v-row>
     </v-container>
-    <v-divider></v-divider>
+      <br>
+      <v-row>
     <v-card id="escondibleCard" v-if="tiempo != 0">
       <v-card-text>
         <p>Tu lugar en la fila es: {{tiempo}}</p>
       </v-card-text>
     </v-card>
+      </v-row>
+    </v-col>
   </div>
 </template>
 
