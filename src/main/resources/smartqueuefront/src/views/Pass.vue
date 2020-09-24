@@ -5,7 +5,7 @@
 
       </v-col>
       <v-col cols = "4" md = "4" align-self>
-        <p class = "fuente-cliente" v-for = "cliente in clientes" :key="`user-name-${cliente.id}`"> {{cliente.nombre}}</p>
+        <p class = "fuente-cliente" v-for = "cliente in clientes" :key="`user-name-${cliente.id}`"> {{cliente.nombre}} {{cliente.apellido}}</p>
       </v-col>
 
       <v-col cols = "4">
@@ -43,7 +43,7 @@ export default {
   },
   created(){
     axios
-      .get("http://localhost:8080/lugarFila/getAll")
+      .get("http://localhost:8081/lugarFila/getAll")
       .then(result => {
           this.clientes = result.data;
           })
@@ -62,6 +62,7 @@ export default {
 .fuente-cliente{
   font-size: 150%;
   border:solid #2c3e50 ;
+  text-align: center;
 }
 
 </style>
