@@ -59,9 +59,8 @@ public class LocalService {
 
     @RequestMapping(value = "/regLocal", method = RequestMethod.POST)
     public Local crearLocal(@RequestBody Local newLocal){
-        localRepo.save(newLocal);
         System.out.println("Se registró local");
-        return newLocal;
+        return localRepo.save(newLocal);
     }
 
     @RequestMapping(value = "/regAdmin", method = RequestMethod.POST)

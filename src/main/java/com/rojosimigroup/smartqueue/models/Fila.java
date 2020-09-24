@@ -16,7 +16,7 @@ public class Fila {
     private int cantidadDePersonas = 0;
     private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
     private boolean activacion = false;
-    private int tiempoEstimado;
+    private int tiempoEstimado = 5;
 
 
     //Constructor
@@ -85,5 +85,18 @@ public class Fila {
         int resultado = (this.listaClientes.indexOf(cliente) + 1) * this.tiempoEstimado;
         return resultado; //en minutos
     }
-
+    
+    public int indexOfCliente(Cliente cliente){
+        int i = 0;
+        for (Cliente cl:
+             this.listaClientes) {
+            if(cl.getId().equals(cliente.getId())){
+                return i;
+            }else{
+                i = i + 1;
+            }
+            
+        }
+        return -2;
+    }
 }

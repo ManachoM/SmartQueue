@@ -2,14 +2,16 @@
   <div id="search">
     <v-container>
       <v-card width="100%" class="mx-auto mt-5">
-        <v-card-title class="d-flex justify-space-between" id="titleSearch"> <h1 class="display-1 text-xs-center"> Busca tu lugar en la fila </h1> </v-card-title>
+        <v-card-title class="d-flex justify-space-between" id="titleSearch">
+          <h1 class="display-1 text-xs-center"> Busca tu lugar en la fila </h1>
+        </v-card-title>
         <v-card-text>
           <v-form>
-            <v-text-field label="RUT" prepend-icon="mdi-account-circle" />
+            <v-text-field label="RUT" prepend-icon="mdi-account-circle" id="rutInput"/>
           </v-form>
         </v-card-text>
         <v-card-actions id="actionSearch">
-          <v-btn color="success" id="btnBuscar">Buscar mi lugar en la fila</v-btn>
+          <v-btn color="success" id="btnBuscar" >Buscar mi lugar en la fila</v-btn>
         </v-card-actions>
       </v-card>
     </v-container>
@@ -18,13 +20,34 @@
 
 
 <script>
-
+import axios from "axios";
 export default {
   name: "Search",
   data() {
-    "tiempo": 0
+    return {
+      tiempo: 0
+    }
   }
 };
+
+function getInputRut(){
+  return document.getElementById("rutInput");
+}
+
+function getLugar(){
+  var rut = getInputRut();
+  axios
+    .get("http://localhost:8081/lugarFila/"+rut)
+    .then(result => {
+      this.tiempo = result.data
+        })
+    .catch(e => {
+      console.log("Error: " + e);
+        });
+}
+
+document.getElementById("btnBuscar").addEventListener("click", getLugar());
+
 </script>
 
 <style>

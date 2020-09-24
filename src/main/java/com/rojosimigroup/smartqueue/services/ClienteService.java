@@ -31,7 +31,9 @@ public class ClienteService {
     if(oLocal.isPresent()){
         Local local = oLocal.get();
         Fila filaLocal = local.getFilaAsoc();
-        return filaLocal.calcularTiempoEstimado(cliente);
+        System.out.println(cliente.getId());
+        int i = filaLocal.indexOfCliente(cliente);
+        return i+1;
     }else{
         System.out.println("No se encontró local :c");
         return -1;
